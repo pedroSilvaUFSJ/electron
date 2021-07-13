@@ -1,6 +1,6 @@
 <template>
   <v-container fluid>
-    <div class="inputContainer">
+    <div class="inputContainer notranslate">
       <div class="maxQtt">
         <span class="labelQtt">Max Quantity</span>
         <input
@@ -25,17 +25,35 @@
         </v-file-input>
       </v-form>
     </div>
-    <div class="pills">
-      <Pill
-        v-for="word in list"
-        :key="word.name"
-        :name="word.name"
-        :amount="word.amount"
-      />
+    <div class="translateContainer">
+    <v-google-translate class="translate" />
+    </div>
+    <div class="wordsContent">
+      <div class="pills notranslate">
+        <Pill
+          v-for="(word, index) in list"
+          :key="word.name"
+          :name="word.name"
+          :amount="word.amount"
+          :length="list.length"
+          :index="index"
+        />
+      </div>
+      <div class="pills Translation">
+        <Pill
+          v-for="(word, index) in list"
+          :key="word.name"
+          :name="word.name"
+          :amount="word.amount"
+          :length="list.length"
+          :index="index"
+        />
+      </div>
     </div>
   </v-container>
 </template>
 
+<script src="https://cdn.jsdelivr.net/npm/v-google-translate/lib/v-google-translate.umd.min.js"/>
 <script>
 import Pill from "./Pill";
 import { ipcRenderer } from "electron";
@@ -62,15 +80,29 @@ export default {
     changeList() {
       this.list = this.groupedWords.slice(0, this.maxQtt);
     },
+    googleTranslateSelectedHandler(language) {
+      const { code, name, cname, ename } = language;
+      // todo ...
+    },
   },
 };
 </script>
 
-<style>
+<style scoped>
 .pills {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  width: 50%;
+  border: 1px solid gray;
+}
+.wordsContent{
+    display: flex;
+    flex-direction: row;
+}
+.translateContainer{
+    display: flex;
+    justify-content: flex-end;
 }
 .inputContainer {
   display: flex;
@@ -85,10 +117,13 @@ export default {
   border-radius: 10px;
   padding-left: 5px;
 }
-.labelQtt{
-    padding-left: 5px;
+.labelQtt {
+  padding-left: 5px;
 }
 .form {
   width: 100%;
+}
+.translate {
+  max-width: 300px;
 }
 </style>

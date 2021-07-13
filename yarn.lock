@@ -9498,6 +9498,14 @@ uuid@^3.3.2, uuid@^3.4.0:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
+v-google-translate@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/v-google-translate/-/v-google-translate-0.1.7.tgz#5fa728adaed49fce89962d7bf4d1c22d17cfdec8"
+  integrity sha512-zn+FJT8FQ5I3P3uF37aHgJ+rSAHtFCIdiEc5ZuX/eReUfw9UP2WtlOVlX4sxAqeVmEynZwJ+3D9TIj6ZZj5zgA==
+  dependencies:
+    core-js "^3.6.5"
+    vue "^2.6.11"
+
 v8-compile-cache@^2.0.3:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"
