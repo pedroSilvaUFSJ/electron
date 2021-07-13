@@ -80,10 +80,6 @@ export default {
     changeList() {
       this.list = this.groupedWords.slice(0, this.maxQtt);
     },
-    googleTranslateSelectedHandler(language) {
-      const { code, name, cname, ename } = language;
-      // todo ...
-    },
   },
 };
 </script>
@@ -102,7 +98,7 @@ export default {
 }
 .translateContainer{
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 .inputContainer {
   display: flex;
